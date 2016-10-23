@@ -29,7 +29,7 @@ class ExternalController extends Controller
                 'ip_address' => $request->getClientIp()
             ]);
         } else {
-            return $user;
+            return new JsonResponse(['message' => 'Invalid User Credentials'], 403);
         }
 
         return new JsonResponse([]);

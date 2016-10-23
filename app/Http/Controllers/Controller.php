@@ -25,7 +25,7 @@ class Controller extends BaseController
                     ->where('passwordhash', $password)->first();
 
         if (!$user) {
-            return new JsonResponse('Invalid User Credentials', 403);
+            return false;
         }
 
         return $user;
