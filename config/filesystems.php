@@ -62,6 +62,16 @@ return [
             'bucket' => 'your-bucket',
         ],
 
+        'imgsharer' => [
+            'driver' => 'ftp',
+            'host' => env('FTP_HOST', ''),
+            'port' => 21,
+            'username' => env('FTP_USER', ''),
+            'password' => env('FTP_PASS', ''),
+            'root' => env('FTP_PATH', ''),
+            'timeout' => 10,
+            ]
+
     ],
 
 ];

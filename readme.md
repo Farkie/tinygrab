@@ -16,4 +16,4 @@ You'll need to change your hosts file on your local device to point to your inst
 
 	127.0.0.1	tinygrab.com
 
-*You might need to change this IP depending on where you host it*
+* You might need to change this depending on where you host it *

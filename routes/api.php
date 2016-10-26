@@ -30,6 +30,11 @@ Route::group(['prefix' => '/'], function () {
                     return $controller->externalAction($request);
                     break;
 
+                case 'grab/upload':
+                    $controller = new \App\Http\Controllers\Upload\InternalController($request);
+                    return $controller->internalAction($request);
+                    break;
+
                 case 'user/recent.json':
                     $controller = new \App\Http\Controllers\User\RecentController($request);
                     return $controller->recentAction($request);
