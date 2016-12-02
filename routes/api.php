@@ -40,6 +40,11 @@ Route::group(['prefix' => '/'], function () {
                     return $controller->recentAction($request);
                     break;
 
+                case 'user/recent.xml':
+                    $controller = new \App\Http\Controllers\User\RecentController($request);
+                    return $controller->recentXmlAction($request);
+                    break;
+
                 default:
                     return new \Illuminate\Http\JsonResponse('Page not found', 404);
             }
