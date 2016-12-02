@@ -72,7 +72,7 @@ class RecentController extends Controller
 
             if ($recents) {
                 foreach ($recents as $id => $recent) {
-                    $row['grab']['id_' . $id] = [
+                    $row[] = [
                         'id' => $recent->id,
                         'date' => $recent->created_at,
                         'title' => basename($recent->url),
@@ -98,10 +98,10 @@ class RecentController extends Controller
     {
         foreach ($data as $key => $value) {
             if (is_array($value)) {
-                $new_object = $object->addChild($key);
+                $new_object = $object->addChild('grab');
                 $this->to_xml($new_object, $value);
             } else {
-                $object->addChild($key, $value);
+                $object->addAttribute($key, $value);
             }
         }
     }
